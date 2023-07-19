@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "2a340bc2-f9e7-4315-aa68-2b83feb8f3be",
+		"name": "general examples test (array& BDD)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "array test-1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b46c8f3-a227-468e-b313-5082f498a76d",
+						"exec": [
+							"\r",
+							"const numbers = [10, 11, 12, 13];\r",
+							"\r",
+							"const person = {\r",
+							"        firstName: 'peter',\r",
+							"        lastName: 'burger',\r",
+							"        age: '35',\r",
+							"        socialMedias: ['facebook', 'insta', 'whatsapp']\r",
+							"}\r",
+							"//console.log(numbers[2]);\r",
+							"//console.log(person.socialMedias[2]);\r",
+							"\r",
+							"//buid-in methods for array:\r",
+							"//console.log(numbers.pop());\r",
+							"console.log(numbers.shift());\r",
+							"\r",
+							"//var resp = pm.response.json();\r",
+							"//bad request check\r",
+							"  /* pm.test(\"this request is a Bad request..\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});   \r",
+							"*/\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", () => {\r",
+							"    pm.response.to.not.be.error;\r",
+							"    pm.response.to.have.jsonBody(1);\r",
+							"    pm.response.to.not.have.jsonBody(\"error\");\r",
+							"});\r",
+							"pm.test(\"response must be valid and have a body\", () => {\r",
+							"     // assert that the status code is 200\r",
+							"     pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants\r",
+							"     // assert that the response has a valid JSON body\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+							"});\r",
+							"\r",
+							"var schema = {\r",
+							"    \"items\": {\r",
+							"        \"type\": \"boolean\"\r",
+							"    }\r",
+							"};\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "c27128d3-736c-4627-871d-7cfe3b06ad3a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://reqres.in/api/user?page=1",
+					"protocol": "http",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
