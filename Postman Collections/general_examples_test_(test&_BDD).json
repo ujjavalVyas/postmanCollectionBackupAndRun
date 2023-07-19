@@ -14,7 +14,7 @@
 						"id": "5b46c8f3-a227-468e-b313-5082f498a76d",
 						"exec": [
 							"\r",
-							"const numbers = [10, 11, 12, 13];\r",
+							"const numbers = [10, 11, 12, 14];\r",
 							"\r",
 							"const person = {\r",
 							"        firstName: 'peter',\r",
@@ -65,7 +65,7 @@
 					}
 				}
 			],
-			"_postman_id": "c27128d3-736c-4627-871d-7cfe3b06ad3a",
+			"id": "c27128d3-736c-4627-871d-7cfe3b06ad3a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
