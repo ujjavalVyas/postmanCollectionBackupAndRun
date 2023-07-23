@@ -28,7 +28,7 @@ jobs:
         
       # run the postman collection 
       - name: Run Tests
-        run: newman run "general_examples_test_(test&_BDD).json" -r cli,htmlextra --reporter-htmlextra-export NM/report15.html
+        run: newman run "Postman Collections/general_examples_test_(test&_BDD).json" -r cli,htmlextra --reporter-htmlextra-export NM/report15.html
         
       # upload the reports to   
       - name: Output the results
