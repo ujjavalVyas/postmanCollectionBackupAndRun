@@ -7,9 +7,11 @@ jobs:
   test-api:
    runs-on: ubuntu-latest
    steps:
-   
    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - name: Create dir
+        run: |
+          mkdir NM
       
     # install node on the runner
       - name: Install Node
@@ -19,10 +21,10 @@ jobs:
           
      # Install newman globally, the the reporter for slack and install the html extra reporter
       - name: Install newman
-      run: |
-        npm install -g newman
-        npm install -g newman-reporter-slackreporter
-        npm install -g newman-reporter-htmlextra
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-slackreporter
+          npm install -g newman-reporter-htmlextra
         
       # run the postman collection 
       - name: Run Tests
