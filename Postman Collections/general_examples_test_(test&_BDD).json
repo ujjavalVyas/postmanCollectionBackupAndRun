@@ -22,7 +22,7 @@
 							"        age: '35',\r",
 							"        socialMedias: ['facebook', 'insta', 'whatsapp']\r",
 							"}\r",
-							"//console.log(numbers[2]);\r",
+							"console.log(numbers[2]);\r",
 							"//console.log(person.socialMedias[2]);\r",
 							"\r",
 							"//buid-in methods for array:\r",
